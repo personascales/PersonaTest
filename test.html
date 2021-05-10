@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>
+      Persona Test
+    </title>
+  </head>
+  <body>
+    <script>
+      var ice = 0;
+      var wind = 0;
+      var nuke = 0;
+      var curse = 0;
+      
+      var phy = 0;
+      var mag = 0;
+      var end = 0;
+      var agi = 0;
+      var luc = 0;
+      
+      var ques = 1;
+      
+      let questions = ["What happens when you?","What? How?"]
+      let scores = [[0,0,-0.25,0,0,0,0.5,0,0.5],[-0.25,0.5,0,0,0.5,0,0,0.25,0]]
+      
+      function nextQ() {
+        ice = ice + Document.getElementById("ans").value*score[ques-1][0];
+        nuke = nuke + Document.getElementById("ans").value*score[ques-1][2];
+        
+        ques = ques + 1;
+        
+        Document.getElementById("question").innerHTML = questions[ques-1];
+      }
+      
+    </script>
+    <div id="question">What happens when you?</div>
+    <div class="slidecontainer">
+      <input type="range" min="-100" max="100" value="0" class="slider" id="ans">
+    </div>
+    <button onclick="nextQ()">
+  </body>
+</html>
